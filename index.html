@@ -1,363 +1,89 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- APP Design & Detail Engineering Organization philosophy: Swiss-editorial clarity, ink/chalk contrast, signal-red moments, and tactile restraint. -->
+  <!--
+    APP DESIGN & DETAIL ENGINEERING ORGANIZATION
+    GitHub-ready standalone portfolio. Edit text inside the HTML directly.
+    Image rule: preserve the full https://files.manuscdn.com URL in src.
+    The data-fallback path will work only when the included assets/ folder is uploaded together with this file.
+  -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="APP Design &amp; Detail Engineering Organization — detail design and engineering analysis for industrial equipment and mechanical structures.">
-  <link rel="icon" type="image/png" href="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/app-detail-engineering-logo_51037a73.png">
+  <meta name="description" content="APP Design & Detail Engineering Organization — detail design and engineering analysis for industrial equipment and mechanical structures.">
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/QwSpMtwKMWzgKdtU.png">
   <title>APP DESIGN &amp; DETAIL ENGINEERING ORGANIZATION</title>
   <style>
-    /* APP engineering design system: editorial split-screen composition, chalk/ink surfaces, and a recurring signal-red spine. */
+    /* APP engineering system: Swiss editorial clarity, ink/chalk contrast, signal-red detail, and technical evidence. */
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-    :root {
-      --ink: #151515;
-      --chalk: #f4f1eb;
-      --stone: #ddd8cf;
-      --stone-dark: #817b72;
-      --signal: #e7472e;
-      --border: #c9c4bb;
-      --ease-out: cubic-bezier(.23, 1, .32, 1);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--chalk); }
-    body {
-      margin: 0;
-      min-width: 320px;
-      color: var(--ink);
-      background: var(--chalk);
-      font-family: 'Space Grotesk', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: none; }
-    button, a { font: inherit; }
-    button, a[href] { cursor: pointer; }
-    button:focus-visible, a:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
-    ::selection { color: var(--chalk); background: var(--signal); }
-    .mono-label, .section-kicker {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .site-shell { overflow: clip; background: var(--chalk); }
-    .site-header {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 5.2vw;
-      border-bottom: 1px solid var(--border);
-      background: rgba(244,241,235,.96);
-    }
-    .header-brand-group, .brand-lockup, .footer-brand { display: flex; align-items: center; }
-    .header-brand-group { gap: 15px; }
-    .header-rail { display: flex; align-items: center; gap: 8px; min-height: 31px; }
-    .header-rail-bar { width: 2px; height: 31px; background: var(--signal); }
-    .header-rail .mono-label { color: var(--stone-dark); font-size: 8px; line-height: 1.2; }
-    .brand-lockup, .footer-brand { gap: 12px; }
-    .brand-mark-wrap { display: grid; width: 31px; height: 31px; place-items: center; overflow: hidden; border: 1px solid var(--border); background: #fff; }
-    .brand-mark, .footer-mark { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
-    .brand-name { font-size: 13px; font-weight: 700; letter-spacing: .12em; }
-    .brand-name-long { display: grid; gap: 2px; max-width: 245px; font-size: 10px; letter-spacing: .08em; line-height: 1.08; }
-    .desktop-nav { display: flex; align-items: center; gap: clamp(19px,2.8vw,45px); font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .03em; text-transform: uppercase; }
-    .desktop-nav > a:not(.nav-contact) { display: inline-flex; align-items: center; gap: 5px; color: #4c4841; transition: color 180ms ease-out; }
-    .desktop-nav > a:not(.nav-contact):hover, .footer-links a:hover, .text-link:hover { color: var(--signal); }
-    .nav-contact { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
-    .nav-contact-dot, .availability-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--signal); }
-    .menu-toggle { display: none; width: 36px; height: 36px; padding: 0; border: 1px solid var(--border); color: var(--ink); background: transparent; }
-
-    .hero-section { position: relative; display: grid; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); gap: clamp(42px,7vw,130px); min-height: min(760px,calc(100vh - 80px)); padding: clamp(68px,9vw,134px) 5.2vw clamp(62px,7vw,100px); }
-    .hero-section::before { position: absolute; top: 0; left: 5.2vw; width: 2px; height: 61px; background: var(--signal); content: ''; }
-    .hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; max-width: 605px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--signal); }
-    .eyebrow-line { width: 28px; height: 1px; background: var(--signal); }
-    .hero-title { max-width: 650px; margin: 27px 0 25px; font-size: clamp(54px,6vw,94px); font-weight: 500; letter-spacing: -.075em; line-height: .98; }
-    .hero-title em { color: var(--signal); font-style: normal; }
-    .hero-intro { max-width: 405px; margin: 0; color: #5f5a52; font-size: clamp(16px,1.3vw,19px); line-height: 1.55; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 37px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 19px; min-height: 46px; padding: 0 17px 0 19px; font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .04em; text-transform: uppercase; transition: transform 160ms var(--ease-out), background-color 180ms ease-out; }
-    .button:active, .contact-button:active { transform: scale(.97); }
-    .button-primary { color: var(--chalk); background: var(--ink); }
-    .button-primary:hover { background: var(--signal); }
-    .text-link { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .04em; text-transform: uppercase; transition: border-color 180ms ease-out,color 180ms ease-out; }
-    .text-link:hover { border-color: var(--signal); }
-    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 75px; color: var(--stone-dark); font-size: 11px; }
-    .hero-note .mono-label { color: var(--ink); }
-    .hero-visual { position: relative; display: flex; align-items: center; justify-content: flex-end; min-width: 0; }
-    .hero-image-frame { position: relative; width: min(100%,690px); margin-right: 20px; background: var(--stone); }
-    .hero-image-frame::after { position: absolute; right: -20px; bottom: -20px; width: 66%; height: 100%; border-right: 1px solid var(--signal); border-bottom: 1px solid var(--signal); content: ''; pointer-events: none; }
-    .hero-image-frame img { display: block; width: 100%; aspect-ratio: 3/2; object-fit: cover; filter: saturate(.9) contrast(1.03); }
-    .hero-image-caption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; color: var(--chalk); background: rgba(21,21,21,.88); font-size: 11px; }
-    .hero-vertical-label { position: absolute; right: -5px; top: 18%; color: var(--stone-dark); transform: rotate(90deg) translateX(100%); transform-origin: top right; }
-    .engineering-section { border-top: 1px solid var(--border); background: #e9e5de; }
-    .engineering-heading { margin-bottom: 62px; }
-    .engineering-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; }
-    .engineering-card { position: relative; display: block; min-height: 300px; overflow: hidden; color: var(--chalk); background: var(--ink); }
-    .engineering-card-contact { grid-column: span 4; min-height: 360px; }
-    .engineering-card-featured { grid-column: span 8; min-height: 360px; }
-    .engineering-card:nth-child(3), .engineering-card:nth-child(4) { grid-column: span 6; }
-    .engineering-card-wide { grid-column: span 12; min-height: 330px; }
-    .engineering-card img { display: block; width: 100%; height: 100%; min-height: inherit; object-fit: cover; filter: saturate(.86) contrast(1.04); transition: transform 600ms var(--ease-out), filter 500ms ease-out; }
-    .engineering-card:hover img { filter: saturate(1.06) contrast(1.04); transform: scale(1.045); }
-    .engineering-card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,21,21,.05) 24%, rgba(21,21,21,.86) 100%); }
-    .engineering-card-copy { position: absolute; right: 24px; bottom: 22px; left: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
-    .engineering-card-copy .mono-label { color: #ff9e8f; font-size: 9px; }
-    .engineering-card-copy strong { max-width: 670px; font-size: clamp(23px,2.8vw,44px); font-weight: 500; letter-spacing: -.065em; line-height: 1; }
-    .engineering-card-contact .engineering-card-copy strong, .engineering-card:nth-child(3) .engineering-card-copy strong, .engineering-card:nth-child(4) .engineering-card-copy strong { font-size: clamp(24px,2.25vw,34px); }
-    .engineering-card-copy em { color: #ff9e8f; font-style: normal; }
-    .engineering-card-link { display: inline-flex; align-items: center; gap: 7px; padding-top: 3px; border-bottom: 1px solid rgba(244,241,235,.62); font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .04em; text-transform: uppercase; transition: color 180ms ease-out,border-color 180ms ease-out; }
-    .engineering-card:hover .engineering-card-link { border-color: var(--signal); color: #ff9e8f; }
-
-    .statement-section { display: grid; grid-template-columns: .25fr .1fr minmax(0,1fr) .2fr; align-items: start; gap: 25px; padding: 45px 5.2vw 50px; color: var(--chalk); background: var(--ink); }
-    .statement-section .section-index { color: var(--signal); }
-    .statement-line { width: 100%; height: 1px; margin-top: 5px; background: var(--signal); }
-    .statement-section p { max-width: 650px; margin: 0; font-size: clamp(21px,2.4vw,38px); letter-spacing: -.04em; line-height: 1.09; }
-    .statement-arrow { justify-self: end; color: var(--signal); }
-    .section-pad { position: relative; padding: clamp(92px,12vw,180px) 5.2vw; }
-    .section-pad::before { position: absolute; top: clamp(34px,4.6vw,61px); left: 5.2vw; width: 2px; height: 46px; background: var(--signal); content: ''; }
-    .services-section { background: var(--chalk); }
-    .section-heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 72px; }
-    .section-kicker { color: var(--signal); }
-    .section-heading-row h2, .about-grid h2 { max-width: 730px; margin: 22px 0 0; font-size: clamp(34px,4.4vw,70px); font-weight: 500; letter-spacing: -.07em; line-height: 1; }
-    .section-side-note { max-width: 250px; margin: 0 0 2px; color: var(--stone-dark); font-size: 13px; line-height: 1.45; }
-    .services-list { border-top: 1px solid var(--border); }
-    .service-row { display: grid; grid-template-columns: .3fr 1fr 1fr 40px; align-items: center; gap: 24px; min-height: 123px; border-bottom: 1px solid var(--border); transition: padding 240ms var(--ease-out),background-color 240ms ease-out; }
-    .service-row:hover { padding-right: 14px; padding-left: 14px; background: var(--stone); }
-    .service-number { color: var(--signal); }
-    .service-row h3 { margin: 0; font-size: clamp(23px,2.4vw,37px); font-weight: 500; letter-spacing: -.06em; }
-    .service-row p { max-width: 310px; margin: 0; color: var(--stone-dark); font-size: 14px; line-height: 1.45; }
-    .service-plus { justify-self: end; color: var(--signal); font-size: 20px; transition: transform 240ms var(--ease-out); }
-    .service-row:hover .service-plus { transform: rotate(90deg); }
-
-    .work-section { border-top: 1px solid var(--border); background: #e9e5de; }
-    .work-heading { align-items: flex-start; }
-    .work-count { padding-top: 7px; color: var(--stone-dark); }
-    .project-list { display: flex; flex-direction: column; gap: 85px; }
-    .project-card { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(250px,.55fr); gap: 32px; align-items: end; }
-    .project-card:nth-child(even) { grid-template-columns: minmax(250px,.55fr) minmax(0,1.45fr); }
-    .project-card:nth-child(even) .project-image-wrap { order: 2; }
-    .project-card:nth-child(even) .project-meta { order: 1; }
-    .project-image-wrap { position: relative; overflow: hidden; background: var(--stone-dark); }
-    .project-image-wrap img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: saturate(.9); transition: transform 500ms var(--ease-out),filter 500ms var(--ease-out); }
-    .project-card:hover .project-image-wrap img { filter: saturate(1.08); transform: scale(1.035); }
-    .project-index { position: absolute; top: 19px; left: 20px; color: var(--chalk); }
-    .project-view { position: absolute; right: 20px; bottom: 18px; display: inline-flex; align-items: center; gap: 7px; color: var(--chalk); font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .03em; text-transform: uppercase; opacity: 0; transform: translateY(8px); transition: opacity 240ms ease-out,transform 240ms var(--ease-out); }
-    .project-card:hover .project-view { opacity: 1; transform: translateY(0); }
-    .project-meta { padding-bottom: 3px; }
-    .project-client-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
-    .project-client-line .mono-label:first-child { color: var(--signal); }
-    .project-client-line .mono-label:last-child { color: var(--stone-dark); text-align: right; }
-    .project-title-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(120px,.75fr); gap: 22px; padding-top: 18px; }
-    .project-title-row h3 { margin: 0; font-size: clamp(25px,2.4vw,40px); font-weight: 500; letter-spacing: -.07em; line-height: 1.02; }
-    .project-title-row p { margin: 0; color: var(--stone-dark); font-size: 13px; line-height: 1.45; }
-    .outcome-label { display: block; margin-bottom: 8px; color: var(--signal); font-size: 9px; }
-
-    .about-section { background: var(--chalk); }
-    .about-index { padding-bottom: 55px; color: var(--signal); }
-    .about-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 8vw; padding-top: 48px; border-top: 1px solid var(--border); }
-    .about-grid h2 { max-width: 750px; margin: 0; }
-    .about-copy { max-width: 380px; padding-top: 8px; }
-    .about-copy p { margin: 0 0 20px; color: #5f5a52; font-size: 16px; line-height: 1.55; }
-    .about-copy .text-link { margin-top: 18px; }
-    .about-details { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: clamp(65px,10vw,145px); padding-top: 20px; border-top: 1px solid var(--border); }
-    .detail-block { min-height: 150px; }
-    .detail-block .mono-label { color: var(--stone-dark); }
-    .detail-block p { margin: 16px 0 0; font-size: 16px; line-height: 1.65; }
-    .detail-availability p { display: flex; align-items: center; gap: 9px; }
-
-    .contact-section { position: relative; padding: 35px 5.2vw 90px; color: var(--chalk); background: var(--ink); }
-    .contact-section::before { position: absolute; top: 0; left: 5.2vw; width: 2px; height: 45px; background: var(--signal); content: ''; }
-    .contact-topline { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid #4c4943; }
-    .contact-topline .mono-label:last-child { color: #aaa49b; }
-    .contact-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(170px,.34fr); gap: 30px; align-items: end; padding-top: 70px; }
-    .contact-main h2, .contact-main p { grid-column: 1; margin: 0; letter-spacing: -.075em; }
-    .contact-main h2 { font-size: clamp(57px,10vw,150px); font-weight: 500; line-height: .83; }
-    .contact-main p { color: var(--signal); font-size: clamp(27px,4.8vw,74px); line-height: .9; }
-    .contact-button { grid-column: 2; grid-row: 1/span 2; display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; min-width: 215px; min-height: 56px; padding-left: 17px; border: 1px solid var(--signal); color: var(--chalk); font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .04em; text-transform: uppercase; transition: background-color 180ms ease-out,color 180ms ease-out,transform 160ms var(--ease-out); }
-    .contact-button:hover { color: var(--ink); background: var(--signal); }
-    .contact-button-icon { display: grid; width: 55px; height: 55px; place-items: center; border-left: 1px solid var(--signal); }
-    .contact-button:hover .contact-button-icon { border-color: var(--ink); }
-    .contact-linkedin { grid-column: 2; grid-row: 3; display: inline-flex; align-items: center; justify-self: start; gap: 8px; margin-top: 18px; color: #aaa49b; font: 500 10px 'IBM Plex Mono',monospace; letter-spacing: .04em; text-transform: uppercase; transition: color 180ms ease-out; }
-    .contact-linkedin:hover { color: var(--signal); }
-    .site-footer { display: grid; grid-template-columns: 1.1fr 1.5fr 1fr .75fr; gap: 25px; align-items: center; padding: 26px 5.2vw 31px; color: var(--chalk); background: var(--ink); border-top: 1px solid #4c4943; }
-    .footer-brand { gap: 10px; }
-    .footer-mark { width: 22px; height: 22px; padding: 2px; background: var(--chalk); }
-    .footer-brand .brand-name { font-size: 10px; }
-    .footer-note { max-width: 240px; color: #aaa49b; font-size: 11px; line-height: 1.45; }
-    .footer-links { display: flex; justify-self: end; gap: 20px; font: 10px 'IBM Plex Mono',monospace; text-transform: uppercase; }
-    .footer-links a { display: inline-flex; align-items: center; gap: 5px; transition: color 180ms ease-out; }
-    .footer-legal { justify-self: end; color: #777169; font-size: 9px; }
-
-    .reveal-up { animation: reveal-up 700ms var(--ease-out) both; }
-    .delay-1 { animation-delay: 80ms; } .delay-2 { animation-delay: 150ms; } .delay-3 { animation-delay: 220ms; } .delay-4 { animation-delay: 290ms; }
-    @keyframes reveal-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
-    @media (max-width: 900px) {
-      .site-header { padding: 19px 6vw; }
-      .hero-section::before, .contact-section::before, .section-pad::before { left: 6vw; }
-      .menu-toggle { display: grid; place-items: center; }
-      .desktop-nav { position: absolute; top: 100%; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 6vw 22px; border-bottom: 1px solid var(--border); background: var(--chalk); }
-      .desktop-nav.is-open { display: flex; }
-      .desktop-nav > a:not(.nav-contact), .nav-contact { justify-content: space-between; padding: 17px 0; border-bottom: 1px solid var(--border); }
-      .hero-section { grid-template-columns: 1fr; gap: 58px; padding: 85px 6vw 72px; }
-      .hero-copy { max-width: 720px; }
-      .hero-note { margin-top: 65px; padding-top: 0; }
-      .hero-visual { width: calc(100% - 22px); justify-self: end; }
-      .hero-vertical-label { right: -21px; }
-      .statement-section, .section-pad, .contact-section, .site-footer { padding-right: 6vw; padding-left: 6vw; }
-      .statement-section { grid-template-columns: 35px 35px minmax(0,1fr) 25px; }
-      .section-heading-row { align-items: flex-start; flex-direction: column; margin-bottom: 50px; }
-      .engineering-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .engineering-card-contact, .engineering-card-featured, .engineering-card:nth-child(3), .engineering-card:nth-child(4), .engineering-card-wide { grid-column: span 1; min-height: 310px; }
-      .engineering-card-featured, .engineering-card-wide { grid-column: span 2; }
-      .section-side-note { max-width: 350px; }
-      .project-card, .project-card:nth-child(even) { grid-template-columns: 1fr; gap: 22px; }
-      .project-card:nth-child(even) .project-image-wrap, .project-card:nth-child(even) .project-meta { order: initial; }
-      .project-list { gap: 70px; }
-      .project-title-row { grid-template-columns: minmax(0,1fr) minmax(160px,.55fr); }
-      .about-grid { grid-template-columns: 1fr; gap: 42px; }
-      .about-copy { max-width: 520px; }
-      .site-footer { grid-template-columns: 1fr 1fr; align-items: start; }
-      .footer-links, .footer-legal { justify-self: start; }
-    }
-
-    @media (max-width: 600px) {
-      .header-rail { display: none; }
-      .brand-name { font-size: 11px; }
-      .brand-name-long { max-width: 175px; font-size: 8px; letter-spacing: .055em; }
-      .hero-section { padding-top: 64px; }
-      .hero-title { font-size: clamp(49px,14vw,78px); line-height: .94; }
-      .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
-      .hero-image-caption { align-items: flex-start; flex-direction: column; gap: 4px; }
-      .hero-vertical-label { display: none; }
-      .statement-section { grid-template-columns: 32px 1fr 22px; gap: 13px; }
-      .statement-line { display: none; }
-      .statement-section p { font-size: 25px; }
-      .section-pad { padding-top: 82px; padding-bottom: 82px; }
-      .section-heading-row h2, .about-grid h2 { font-size: clamp(38px,11vw,58px); }
-      .service-row { grid-template-columns: 32px 1fr 23px; gap: 12px; padding: 23px 0; }
-      .service-row:hover { padding-right: 0; padding-left: 0; background: transparent; }
-      .service-row h3 { font-size: 27px; }
-      .service-row p { grid-column: 2/span 2; max-width: 310px; }
-      .service-plus { grid-column: 3; grid-row: 1; }
-      .project-list { gap: 61px; }
-      .project-title-row { display: block; }
-      .engineering-grid { display: flex; flex-direction: column; }
-      .engineering-card, .engineering-card-contact, .engineering-card-featured, .engineering-card:nth-child(3), .engineering-card:nth-child(4), .engineering-card-wide { min-height: 290px; }
-      .engineering-card-featured, .engineering-card-wide { min-height: 320px; }
-      .engineering-card-copy { right: 18px; bottom: 18px; left: 18px; }
-      .engineering-card-copy strong, .engineering-card-contact .engineering-card-copy strong, .engineering-card:nth-child(3) .engineering-card-copy strong, .engineering-card:nth-child(4) .engineering-card-copy strong { font-size: 30px; }
-      .project-title-row p { max-width: 270px; margin-top: 15px; }
-      .project-view { opacity: 1; transform: none; }
-      .about-index { padding-bottom: 38px; }
-      .about-grid { padding-top: 37px; }
-      .about-details { grid-template-columns: 1fr 1fr; gap: 36px 18px; }
-      .detail-availability { grid-column: 1/-1; min-height: auto; }
-      .contact-section { padding-top: 26px; padding-bottom: 65px; }
-      .contact-topline { align-items: flex-start; flex-direction: column; gap: 12px; }
-      .contact-main { display: block; padding-top: 63px; }
-      .contact-main h2 { font-size: 18vw; }
-      .contact-main p { margin-top: 14px; font-size: 10vw; }
-      .contact-button { width: 100%; margin-top: 48px; }
-      .site-footer { grid-template-columns: 1fr; gap: 22px; }
-      .footer-links, .footer-legal { justify-self: start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
+    :root { --ink:#151515; --chalk:#f4f1eb; --stone:#ddd8cf; --stone-dark:#817b72; --signal:#e7472e; --border:#c9c4bb; --ease:cubic-bezier(.23,1,.32,1); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; background:var(--chalk); } body { margin:0; min-width:320px; color:var(--ink); background:var(--chalk); font-family:'Space Grotesk',Arial,sans-serif; -webkit-font-smoothing:antialiased; } a { color:inherit; text-decoration:none; } button,a { font:inherit; } button,a[href] { cursor:pointer; } button:focus-visible,a:focus-visible { outline:2px solid var(--signal); outline-offset:4px; } ::selection { color:var(--chalk); background:var(--signal); }
+    .mono-label,.section-kicker { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:500; letter-spacing:.08em; line-height:1.5; text-transform:uppercase; }
+    .site-shell { overflow:clip; background:var(--chalk); }
+    .site-header { position:relative; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:24px 5.2vw; border-bottom:1px solid var(--border); background:rgba(244,241,235,.96); }
+    .header-brand-group,.brand-lockup,.footer-brand { display:flex; align-items:center; }.header-brand-group { gap:15px; }.header-rail { display:flex; align-items:center; gap:8px; min-height:31px; }.header-rail-bar { width:2px; height:31px; background:var(--signal); }.header-rail .mono-label { color:var(--stone-dark); font-size:8px; line-height:1.2; }.brand-lockup,.footer-brand { gap:12px; }.brand-mark-wrap { display:grid; width:31px; height:31px; place-items:center; overflow:hidden; border:1px solid var(--border); background:#fff; }.brand-mark,.footer-mark { width:100%; height:100%; object-fit:cover; object-position:center 18%; }.brand-name { font-size:13px; font-weight:700; letter-spacing:.12em; }.brand-name-long { display:grid; gap:2px; max-width:245px; font-size:10px; letter-spacing:.08em; line-height:1.08; }
+    .desktop-nav { display:flex; align-items:center; gap:clamp(19px,2.8vw,45px); font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.03em; text-transform:uppercase; }.desktop-nav>a:not(.nav-contact) { display:inline-flex; align-items:center; gap:5px; color:#4c4841; transition:color 180ms ease-out; }.desktop-nav>a:not(.nav-contact):hover,.footer-links a:hover,.text-link:hover { color:var(--signal); }.nav-contact { display:inline-flex; align-items:center; gap:10px; color:var(--ink); }.nav-contact-dot,.availability-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--signal); }.menu-toggle { display:none; width:36px; height:36px; padding:0; border:1px solid var(--border); color:var(--ink); background:transparent; }
+    .hero-section { position:relative; display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:clamp(42px,7vw,130px); min-height:min(760px,calc(100vh - 80px)); padding:clamp(68px,9vw,134px) 5.2vw clamp(62px,7vw,100px); }.hero-section:before { position:absolute; top:0; left:5.2vw; width:2px; height:61px; background:var(--signal); content:''; }.hero-copy { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; max-width:605px; }.eyebrow { display:inline-flex; align-items:center; gap:10px; color:var(--signal); }.eyebrow-line { width:28px; height:1px; background:var(--signal); }.hero-title { max-width:650px; margin:27px 0 25px; font-size:clamp(54px,6vw,94px); font-weight:500; letter-spacing:-.075em; line-height:.98; }.hero-title em { color:var(--signal); font-style:normal; }.hero-intro { max-width:405px; margin:0; color:#5f5a52; font-size:clamp(16px,1.3vw,19px); line-height:1.55; }.hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:25px; margin-top:37px; }.button { display:inline-flex; align-items:center; justify-content:center; gap:19px; min-height:46px; padding:0 17px 0 19px; font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; transition:transform 160ms var(--ease),background-color 180ms ease-out; }.button:active,.contact-button:active { transform:scale(.97); }.button-primary { color:var(--chalk); background:var(--ink); }.button-primary:hover { background:var(--signal); }.text-link { display:inline-flex; align-items:center; gap:7px; padding-bottom:5px; border-bottom:1px solid var(--ink); font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }.text-link:hover { border-color:var(--signal); }.hero-note { display:flex; align-items:center; gap:12px; margin-top:auto; padding-top:75px; color:var(--stone-dark); font-size:11px; }.hero-note .mono-label { color:var(--ink); }.hero-visual { position:relative; display:flex; align-items:center; justify-content:flex-end; min-width:0; }.hero-image-frame { position:relative; width:min(100%,690px); margin-right:20px; background:var(--stone); }.hero-image-frame:after { position:absolute; right:-20px; bottom:-20px; width:66%; height:100%; border-right:1px solid var(--signal); border-bottom:1px solid var(--signal); content:''; pointer-events:none; }.hero-image-frame img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; filter:saturate(.9) contrast(1.03); }.hero-image-caption { position:absolute; right:0; bottom:0; left:0; display:flex; align-items:center; justify-content:space-between; padding:15px 18px; color:var(--chalk); background:rgba(21,21,21,.88); font-size:11px; }.hero-vertical-label { position:absolute; top:18%; right:-5px; color:var(--stone-dark); transform:rotate(90deg) translateX(100%); transform-origin:top right; }
+    .section-pad { position:relative; padding:clamp(92px,12vw,180px) 5.2vw; }.section-pad:before { position:absolute; top:clamp(34px,4.6vw,61px); left:5.2vw; width:2px; height:46px; background:var(--signal); content:''; }.section-heading-row { display:flex; align-items:flex-end; justify-content:space-between; gap:40px; margin-bottom:72px; }.section-kicker { color:var(--signal); }.section-heading-row h2,.about-grid h2 { max-width:730px; margin:22px 0 0; font-size:clamp(34px,4.4vw,70px); font-weight:500; letter-spacing:-.07em; line-height:1; }.section-side-note { max-width:250px; margin:0 0 2px; color:var(--stone-dark); font-size:13px; line-height:1.45; }
+    .engineering-section { border-top:1px solid var(--border); background:#e9e5de; }.engineering-heading { margin-bottom:62px; }.engineering-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:18px; }.engineering-card { position:relative; display:block; min-height:300px; overflow:hidden; color:var(--chalk); background:var(--ink); }.engineering-card-contact { grid-column:span 4; min-height:360px; }.engineering-card-featured { grid-column:span 8; min-height:360px; }.engineering-card-standard { grid-column:span 6; }.engineering-card-wide,.engineering-card-software { grid-column:span 12; min-height:330px; }.engineering-card-software { min-height:350px; }.engineering-card img { display:block; width:100%; height:100%; min-height:inherit; object-fit:cover; filter:saturate(.86) contrast(1.04); transition:transform 600ms var(--ease),filter 500ms ease-out; }.engineering-card:hover img { filter:saturate(1.06) contrast(1.04); transform:scale(1.045); }.engineering-card-shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(21,21,21,.05) 24%,rgba(21,21,21,.86) 100%); }.engineering-card-copy { position:absolute; right:24px; bottom:22px; left:24px; display:flex; flex-direction:column; align-items:flex-start; gap:11px; }.engineering-card-copy .mono-label { color:#ff9e8f; font-size:9px; }.engineering-card-copy strong { max-width:670px; font-size:clamp(23px,2.8vw,44px); font-weight:500; letter-spacing:-.065em; line-height:1; }.engineering-card-contact .engineering-card-copy strong,.engineering-card-standard .engineering-card-copy strong { font-size:clamp(24px,2.25vw,34px); }.engineering-card-copy em { color:#ff9e8f; font-style:normal; }.engineering-card-link { display:inline-flex; align-items:center; gap:7px; padding-top:3px; border-bottom:1px solid rgba(244,241,235,.62); font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }.engineering-card:hover .engineering-card-link { color:#ff9e8f; border-color:var(--signal); }
+    .software-section { border-top:1px solid var(--border); background:var(--chalk); }.software-layout { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr); gap:clamp(30px,7vw,110px); align-items:start; }.software-visual,.procedure-visual,.technical-figure { margin:0; }.software-visual,.procedure-visual { overflow:hidden; background:#fff; border:1px solid var(--border); }.software-visual img,.procedure-visual img,.technical-figure img { display:block; width:100%; height:auto; }.software-visual figcaption,.procedure-visual figcaption { padding:12px 14px; color:var(--stone-dark); border-top:1px solid var(--border); }.software-tools { border-top:1px solid var(--border); }.software-tool { display:grid; grid-template-columns:48px 1fr; gap:15px; align-items:baseline; min-height:73px; padding:14px 0; border-bottom:1px solid var(--border); }.software-tool .mono-label { color:var(--signal); }.software-tool strong { font-size:clamp(24px,2.5vw,42px); font-weight:500; letter-spacing:-.06em; }
+    .evidence-section { border-top:1px solid var(--border); background:#e9e5de; }.evidence-intro { display:grid; grid-template-columns:minmax(150px,.28fr) minmax(0,.72fr); gap:24px; padding:38px 5.2vw; color:var(--chalk); background:var(--ink); }.evidence-intro .mono-label { color:#ff9e8f; }.evidence-intro p { max-width:650px; margin:0; font-size:clamp(20px,2.2vw,34px); letter-spacing:-.045em; line-height:1.08; }.capability-detail { padding:clamp(86px,11vw,160px) 5.2vw; border-top:1px solid var(--border); }.capability-detail:first-of-type { border-top:0; }.capability-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:40px; margin-bottom:clamp(42px,7vw,94px); }.capability-heading h2 { max-width:720px; margin:21px 0 0; font-size:clamp(41px,5.2vw,82px); font-weight:500; letter-spacing:-.075em; line-height:.96; }.capability-subtitle { margin:14px 0 0; color:var(--signal); font-size:15px; letter-spacing:-.02em; }.capability-body { display:grid; grid-template-columns:minmax(270px,.3fr) minmax(0,.7fr); gap:clamp(28px,5vw,76px); align-items:start; }.capability-procedure { position:sticky; top:18px; }.procedure-visual img { max-height:360px; object-fit:contain; object-position:top left; }.deliverable-list { display:flex; flex-direction:column; gap:0; margin:30px 0 0; padding:0; border-top:1px solid var(--border); list-style:none; }.deliverable-list li { display:grid; grid-template-columns:37px 1fr; gap:12px; padding:15px 0; border-bottom:1px solid var(--border); font-size:13px; line-height:1.45; }.deliverable-list .mono-label { color:var(--signal); font-size:9px; }.technical-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }.technical-gallery-3 .technical-figure:first-child,.technical-gallery-2 .technical-figure:first-child { grid-column:span 2; }.technical-figure { overflow:hidden; background:#f7f5f1; border:1px solid var(--border); }.technical-figure img { aspect-ratio:4/3; object-fit:contain; background:#fff; transition:transform 500ms var(--ease); }.technical-figure:hover img { transform:scale(1.02); }.technical-figure figcaption { display:grid; grid-template-columns:42px 1fr; gap:10px; padding:14px 15px 16px; border-top:1px solid var(--border); }.technical-figure figcaption>.mono-label { color:var(--signal); font-size:9px; }.technical-figure figcaption strong,.technical-figure figcaption small { display:block; }.technical-figure figcaption strong { font-size:14px; font-weight:500; }.technical-figure figcaption small { margin-top:4px; color:var(--stone-dark); font:9px/1.35 'IBM Plex Mono',monospace; letter-spacing:.02em; text-transform:uppercase; }
+    .about-section { background:var(--chalk); }.about-index { padding-bottom:55px; color:var(--signal); }.about-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:8vw; padding-top:48px; border-top:1px solid var(--border); }.about-grid h2 { max-width:750px; margin:0; }.about-copy { max-width:380px; padding-top:8px; }.about-copy p { margin:0 0 20px; color:#5f5a52; font-size:16px; line-height:1.55; }.about-copy .text-link { margin-top:18px; }.about-details { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:clamp(65px,10vw,145px); padding-top:20px; border-top:1px solid var(--border); }.detail-block { min-height:150px; }.detail-block .mono-label { color:var(--stone-dark); }.detail-block p { margin:16px 0 0; font-size:16px; line-height:1.65; }.detail-availability p { display:flex; align-items:center; gap:9px; }
+    .contact-section { position:relative; padding:35px 5.2vw 90px; color:var(--chalk); background:var(--ink); }.contact-section:before { position:absolute; top:0; left:5.2vw; width:2px; height:45px; background:var(--signal); content:''; }.contact-topline { display:flex; justify-content:space-between; gap:20px; padding-bottom:24px; border-bottom:1px solid #4c4943; }.contact-topline .mono-label:last-child { color:#aaa49b; }.contact-main { display:grid; grid-template-columns:minmax(0,1fr) minmax(170px,.34fr); gap:30px; align-items:end; padding-top:70px; }.contact-main h2,.contact-main p { grid-column:1; margin:0; letter-spacing:-.075em; }.contact-main h2 { font-size:clamp(57px,10vw,150px); font-weight:500; line-height:.83; }.contact-main p { color:var(--signal); font-size:clamp(27px,4.8vw,74px); line-height:.9; }.contact-button { grid-column:2; grid-row:1/span 2; display:inline-flex; align-items:center; justify-content:space-between; gap:20px; min-width:215px; min-height:56px; padding-left:17px; border:1px solid var(--signal); color:var(--chalk); font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; transition:background-color 180ms ease-out,color 180ms ease-out,transform 160ms var(--ease); }.contact-button:hover { color:var(--ink); background:var(--signal); }.contact-button-icon { display:grid; width:55px; height:55px; place-items:center; border-left:1px solid var(--signal); }.contact-button:hover .contact-button-icon { border-color:var(--ink); }.contact-linkedin { grid-column:2; grid-row:3; display:inline-flex; align-items:center; justify-self:start; gap:8px; margin-top:18px; color:#aaa49b; font:500 10px 'IBM Plex Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }.contact-linkedin:hover { color:var(--signal); }.site-footer { display:grid; grid-template-columns:1.1fr 1.5fr 1fr .75fr; gap:25px; align-items:center; padding:26px 5.2vw 31px; color:var(--chalk); background:var(--ink); border-top:1px solid #4c4943; }.footer-brand { gap:10px; }.footer-mark { width:22px; height:22px; padding:2px; background:var(--chalk); }.footer-brand .brand-name { font-size:10px; }.footer-note { max-width:240px; color:#aaa49b; font-size:11px; line-height:1.45; }.footer-links { display:flex; justify-self:end; gap:20px; font:10px 'IBM Plex Mono',monospace; text-transform:uppercase; }.footer-links a { display:inline-flex; align-items:center; gap:5px; }.footer-legal { justify-self:end; color:#777169; font-size:9px; }
+    .reveal-up { animation:reveal-up 700ms var(--ease) both; }.delay-1 { animation-delay:80ms; }.delay-2 { animation-delay:150ms; }.delay-3 { animation-delay:220ms; }.delay-4 { animation-delay:290ms; } @keyframes reveal-up { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @media (max-width:900px) { .site-header { padding:19px 6vw; }.hero-section:before,.contact-section:before,.section-pad:before { left:6vw; }.menu-toggle { display:grid; place-items:center; }.desktop-nav { position:absolute; top:100%; right:0; left:0; display:none; flex-direction:column; align-items:stretch; gap:0; padding:8px 6vw 22px; border-bottom:1px solid var(--border); background:var(--chalk); }.desktop-nav.is-open { display:flex; }.desktop-nav>a:not(.nav-contact),.nav-contact { justify-content:space-between; padding:17px 0; border-bottom:1px solid var(--border); }.hero-section { grid-template-columns:1fr; gap:58px; padding:85px 6vw 72px; }.hero-copy { max-width:720px; }.hero-note { margin-top:65px; padding-top:0; }.hero-visual { width:calc(100% - 22px); justify-self:end; }.hero-vertical-label { right:-21px; }.section-pad,.contact-section,.site-footer { padding-right:6vw; padding-left:6vw; }.section-heading-row,.capability-heading { align-items:flex-start; flex-direction:column; margin-bottom:50px; }.engineering-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.engineering-card-contact,.engineering-card-featured,.engineering-card-standard,.engineering-card-wide { grid-column:span 1; min-height:310px; }.engineering-card-featured,.engineering-card-wide,.engineering-card-software { grid-column:span 2; }.section-side-note { max-width:350px; }.software-layout,.capability-body { grid-template-columns:1fr; }.capability-procedure { position:static; display:grid; grid-template-columns:minmax(0,.86fr) minmax(260px,1.14fr); gap:28px; align-items:start; }.deliverable-list { margin-top:0; }.evidence-intro { padding-right:6vw; padding-left:6vw; }.capability-detail { padding-right:6vw; padding-left:6vw; }.about-grid { grid-template-columns:1fr; gap:42px; }.about-copy { max-width:520px; }.site-footer { grid-template-columns:1fr 1fr; align-items:start; }.footer-links,.footer-legal { justify-self:start; } }
+    @media (max-width:600px) { .header-rail { display:none; }.brand-name { font-size:11px; }.brand-name-long { max-width:175px; font-size:8px; letter-spacing:.055em; }.hero-section { padding-top:64px; }.hero-title { font-size:clamp(49px,14vw,78px); line-height:.94; }.hero-actions { align-items:flex-start; flex-direction:column; gap:20px; }.hero-image-caption { align-items:flex-start; flex-direction:column; gap:4px; }.hero-vertical-label { display:none; }.section-pad { padding-top:82px; padding-bottom:82px; }.section-heading-row h2,.about-grid h2 { font-size:clamp(38px,11vw,58px); }.engineering-grid { display:flex; flex-direction:column; }.engineering-card,.engineering-card-contact,.engineering-card-featured,.engineering-card-standard,.engineering-card-wide,.engineering-card-software { min-height:290px; }.engineering-card-featured,.engineering-card-wide,.engineering-card-software { min-height:320px; }.engineering-card-copy { right:18px; bottom:18px; left:18px; }.engineering-card-copy strong,.engineering-card-contact .engineering-card-copy strong,.engineering-card-standard .engineering-card-copy strong { font-size:30px; }.evidence-intro { grid-template-columns:1fr; gap:12px; padding-top:29px; padding-bottom:31px; }.evidence-intro p { font-size:24px; }.capability-detail { padding-top:82px; padding-bottom:82px; }.capability-heading { gap:22px; margin-bottom:38px; }.capability-heading h2 { font-size:clamp(39px,11vw,58px); }.capability-procedure { display:block; }.procedure-visual img { max-height:none; }.deliverable-list { margin-top:24px; }.technical-gallery { grid-template-columns:1fr; gap:18px; margin-top:28px; }.technical-gallery-3 .technical-figure:first-child,.technical-gallery-2 .technical-figure:first-child { grid-column:auto; }.technical-figure figcaption { padding:12px 13px 14px; }.about-index { padding-bottom:38px; }.about-grid { padding-top:37px; }.about-details { grid-template-columns:1fr 1fr; gap:36px 18px; }.detail-availability { grid-column:1/-1; min-height:auto; }.contact-section { padding-top:26px; padding-bottom:65px; }.contact-topline { align-items:flex-start; flex-direction:column; gap:12px; }.contact-main { display:block; padding-top:63px; }.contact-main h2 { font-size:18vw; }.contact-main p { margin-top:14px; font-size:10vw; }.contact-button { width:100%; margin-top:48px; }.site-footer { grid-template-columns:1fr; gap:22px; }.footer-links,.footer-legal { justify-self:start; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+    /* Final APP identity refinements: one visible signal spine and one normalized evidence treatment. */
+    .site-shell::after { position:fixed; z-index:40; top:0; bottom:0; left:5.2vw; width:1px; background:linear-gradient(180deg,transparent 0 18px,rgba(231,71,46,.88) 18px 108px,rgba(231,71,46,.24) 108px 100%); content:''; pointer-events:none; }
+    .brand-mark-wrap { position:relative; }.brand-mark-wrap::before { position:absolute; z-index:1; top:0; bottom:0; left:0; width:4px; background:var(--signal); content:''; }.brand-mark,.footer-mark { position:relative; z-index:0; }.brand-name-long { letter-spacing:.13em; }
+    .technical-figure { position:relative; }.technical-figure::before { position:absolute; z-index:2; top:0; left:0; width:38px; height:4px; background:var(--signal); content:''; }.technical-figure img { filter:grayscale(.18) saturate(.75) contrast(1.04); }
+    @media (max-width:900px) { .site-shell::after { left:6vw; } }
   </style>
 </head>
 <body>
-  <!-- APP page structure: identity rail, hero, engineering scope, proof index, about, and contact. -->
   <main class="site-shell">
     <header class="site-header">
-      <div class="header-brand-group">
-        <div class="header-rail" aria-hidden="true"><span class="header-rail-bar"></span><span class="mono-label">/ SS<br>26</span></div>
-        <a class="brand-lockup" href="#top" aria-label="APP Design &amp; Detail Engineering Organization home"><span class="brand-mark-wrap"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/app-detail-engineering-logo_51037a73.png" alt="APP Design &amp; Detail Engineering Organization logo" class="brand-mark"></span><span class="brand-name brand-name-long"><span>APP DESIGN &amp; DETAIL</span><span>ENGINEERING ORGANIZATION</span></span></a>
-      </div>
-      <nav id="site-nav" class="desktop-nav" aria-label="Primary navigation">
-        <a href="#work">Selected work <span aria-hidden="true">↗</span></a>
-        <a href="#engineering">Engineering <span aria-hidden="true">↗</span></a>
-        <a href="#about">About <span aria-hidden="true">↗</span></a>
-        <a href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a class="nav-contact" href="mailto:admin.appmecheng@gmail.com">Start a conversation <span class="nav-contact-dot" aria-hidden="true"></span></a>
-      </nav>
+      <div class="header-brand-group"><div class="header-rail" aria-hidden="true"><span class="header-rail-bar"></span><span class="mono-label">/ APP<br>26</span></div><a class="brand-lockup" href="#top" aria-label="APP Design &amp; Detail Engineering Organization home"><span class="brand-mark-wrap"><!-- PRIMARY PUBLIC URL + LOCAL PACKAGE FALLBACK --><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/QwSpMtwKMWzgKdtU.png" data-fallback="assets/app-detail-engineering-logo.png" alt="APP Design &amp; Detail Engineering Organization logo" class="brand-mark"></span><span class="brand-name brand-name-long"><span>APP DESIGN &amp; DETAIL</span><span>ENGINEERING ORGANIZATION</span></span></a></div>
+      <nav id="site-nav" class="desktop-nav" aria-label="Primary navigation"><a href="#engineering">Engineering ↗</a><a href="#air-coolers">Project evidence ↗</a><a href="#about">About ↗</a><a href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="nav-contact" href="mailto:admin.appmecheng@gmail.com">Start a conversation <span class="nav-contact-dot" aria-hidden="true"></span></a></nav>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
     </header>
-
-    <div id="top" class="hero-section">
-      <div class="hero-copy">
-        <div class="eyebrow reveal-up"><span class="eyebrow-line"></span>Detail + design engineering</div>
-        <h1 class="hero-title reveal-up delay-1">Make every detail <em>count.</em></h1>
-        <p class="hero-intro reveal-up delay-2">APP brings together detailed engineering design and practical analysis for heat exchangers, pressure vessels, and mechanical structures.</p>
-        <div class="hero-actions reveal-up delay-3"><a class="button button-primary" href="#engineering">Explore engineering scope <span aria-hidden="true">↓</span></a><a class="text-link" href="mailto:admin.appmecheng@gmail.com">Discuss an engineering project <span aria-hidden="true">↗</span></a></div>
-        <div class="hero-note reveal-up delay-4"><span class="mono-label">Focus</span><span>Engineering design · Working worldwide</span></div>
-      </div>
-      <div class="hero-visual reveal-up delay-2"><div class="hero-image-frame"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/app-engineering-design-hero_60d38f5c.jpeg" alt="Engineer developing mechanical equipment details from technical drawings"><div class="hero-image-caption"><span class="mono-label">APP / 001</span><span>Engineering begins with a clear detail.</span></div></div><div class="hero-vertical-label mono-label">Detail engineering / 2026</div></div>
-    </div>
-
-    <section id="engineering" class="engineering-section section-pad">
-      <div class="section-heading-row engineering-heading"><div><span class="section-kicker mono-label">/ 01 — Engineering scope</span><h2>Equipment designed for the conditions that matter.</h2></div><p class="section-side-note">Thermal equipment, vessels, and mechanical structures engineered with practical clarity from first calculation to final fabrication.</p></div>
-      <div class="engineering-grid">
-        <a class="engineering-card engineering-card-contact" href="mailto:admin.appmecheng@gmail.com"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/fallback-contact_218c4224.jpg" alt="Engineering team reviewing industrial machinery"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">01 / Contact us</span><strong>Talk to an engineer about the next move.</strong><span class="engineering-card-link">Start a conversation ↗</span></span></a>
-        <article class="engineering-card engineering-card-featured"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/engineering-category-reference_71608a17.png" alt="Air cooled heat exchanger with fin-fan cooler bundles"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">02 / Thermal equipment</span><strong>Air Cooled Heat Exchangers <em>(Fin-Fan Coolers)</em></strong><span class="engineering-card-link">Explore capability ↗</span></span></article>
-        <article class="engineering-card"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/fallback-shell-tube_bb0fa5a5.png" alt="Shell and tube heat exchanger in a fabrication workshop"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">03 / Thermal equipment</span><strong>Shell &amp; Tube Heat Exchangers</strong><span class="engineering-card-link">Explore capability ↗</span></span></article>
-        <article class="engineering-card"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/fallback-pressure-vessel_934a0b76.jpg" alt="Large horizontal pressure vessel in a fabrication yard"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">04 / Fabricated equipment</span><strong>Pressure Vessel</strong><span class="engineering-card-link">Explore capability ↗</span></span></article>
-        <article class="engineering-card engineering-card-wide"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/fallback-platform_881bcd34.webp" alt="Engineered steel mechanical structure platform with stairs and handrails"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">05 / Mechanical structures</span><strong>Mechanical Structure Platform Design &amp; Analysis</strong><span class="engineering-card-link">Explore capability ↗</span></span></article>
-      </div>
+    <div id="top" class="hero-section"><div class="hero-copy"><div class="eyebrow reveal-up"><span class="eyebrow-line"></span>Detail + design engineering</div><h1 class="hero-title reveal-up delay-1">Make every detail <em>count.</em></h1><p class="hero-intro reveal-up delay-2">APP brings together detailed engineering design and practical analysis for heat exchangers, pressure vessels, and mechanical structures.</p><div class="hero-actions reveal-up delay-3"><a class="button button-primary" href="#engineering">Explore engineering scope ↓</a><a class="text-link" href="mailto:admin.appmecheng@gmail.com">Discuss an engineering project ↗</a></div><div class="hero-note reveal-up delay-4"><span class="mono-label">Focus</span><span>Engineering design · Working worldwide</span></div></div><div class="hero-visual reveal-up delay-2"><div class="hero-image-frame"><!-- HERO PHOTO: DO NOT DELETE THE src URL; replace only if you upload a new permanent photo. --><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/mUzTrMrLZlmrsFCr.jpeg" data-fallback="assets/app-engineering-design-hero.jpeg" alt="Engineer developing mechanical equipment details from technical drawings"><div class="hero-image-caption"><span class="mono-label">APP / 001</span><span>Engineering begins with a clear detail.</span></div></div><div class="hero-vertical-label mono-label">Detail engineering / 2026</div></div></div>
+    <section id="engineering" class="engineering-section section-pad"><div class="section-heading-row engineering-heading"><div><span class="section-kicker mono-label">/ 01 — Engineering scope</span><h2>Equipment designed for the conditions that matter.</h2></div><p class="section-side-note">Thermal equipment, vessels, and mechanical structures engineered with practical clarity from first calculation to final fabrication.</p></div><div class="engineering-grid">
+      <a class="engineering-card engineering-card-contact" href="mailto:admin.appmecheng@gmail.com"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/PVNCDJhhkdrETKKp.jpg" data-fallback="assets/fallback-contact.jpg" alt="Engineering team reviewing industrial machinery"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">01 / Contact us</span><strong>Talk to an engineer about the next move.</strong><span class="engineering-card-link">Start a conversation ↗</span></span></a>
+      <a class="engineering-card engineering-card-featured" href="#air-coolers"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/vVmqIUCnigcumWuH.png" data-fallback="assets/engineering-category-reference.png" alt="Air cooled heat exchanger with fin-fan cooler bundles"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">02 / Thermal equipment</span><strong>Air Cooled Heat Exchangers <em>(Fin-Fan Coolers)</em></strong><span class="engineering-card-link">View projects ↗</span></span></a>
+      <a class="engineering-card engineering-card-standard" href="#shell-tube"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/lwPFxkvvARQeSIAK.png" data-fallback="assets/fallback-shell-tube.png" alt="Shell and tube heat exchanger in a fabrication workshop"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">03 / Thermal equipment</span><strong>Shell &amp; Tube Heat Exchangers</strong><span class="engineering-card-link">View models ↗</span></span></a>
+      <a class="engineering-card engineering-card-standard" href="#pressure-vessels"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/PsVLLxzxzSEmDqXn.jpg" data-fallback="assets/fallback-pressure-vessel.jpg" alt="Large horizontal pressure vessel in a fabrication yard"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">04 / Fabricated equipment</span><strong>Pressure Vessel</strong><span class="engineering-card-link">View models ↗</span></span></a>
+      <article class="engineering-card engineering-card-wide"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/VXLWBKAdHdGxJflD.webp" data-fallback="assets/fallback-platform.webp" alt="Engineered steel mechanical structure platform with stairs and handrails"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">05 / Mechanical structures</span><strong>Mechanical Structure Platform Design &amp; Analysis</strong><span class="engineering-card-link">Engineering capability ↗</span></span></article>
+      <a class="engineering-card engineering-card-software" href="#software"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/FPCOCvNoHJBjYdZQ.png" data-fallback="assets/software-usage-list.png" alt="Engineering software usage list"><span class="engineering-card-shade"></span><span class="engineering-card-copy"><span class="mono-label">06 / Software usage</span><strong>Software Usage List</strong><span class="engineering-card-link">View tools ↗</span></span></a>
+    </div></section>
+    <section id="software" class="software-section section-pad"><div class="section-heading-row"><div><span class="section-kicker mono-label">/ 06 — Software usage</span><h2>Tools selected for disciplined engineering detail.</h2></div><p class="section-side-note">Software used across modelling, vessel analysis, drawing development, finite element work, and structural analysis.</p></div><div class="software-layout"><figure class="software-visual"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/FPCOCvNoHJBjYdZQ.png" data-fallback="assets/software-usage-list.png" alt="Software Usage List presentation"><figcaption class="mono-label">User-supplied software overview</figcaption></figure><div class="software-tools"><div class="software-tool"><span class="mono-label">01</span><strong>Solid Edge</strong></div><div class="software-tool"><span class="mono-label">02</span><strong>PV Elite</strong></div><div class="software-tool"><span class="mono-label">03</span><strong>ZWCAD</strong></div><div class="software-tool"><span class="mono-label">04</span><strong>FEA</strong></div><div class="software-tool"><span class="mono-label">05</span><strong>STAAD.Pro</strong></div><div class="software-tool"><span class="mono-label">06</span><strong>AutoCAD</strong></div></div></div></section>
+    <section class="evidence-section" aria-label="Engineering procedure and project evidence"><div class="evidence-intro"><span class="mono-label">/ Project evidence</span><p>Procedure references and selected 3D model or fabrication-detail examples supplied by APP.</p></div>
+      <article id="air-coolers" class="capability-detail"><header class="capability-heading"><div><span class="section-kicker mono-label">/ 02 — Thermal equipment</span><h2>Air Cooled Heat Exchangers</h2><p class="capability-subtitle">Fin-Fan Coolers</p></div><p class="section-side-note">Procedure-led design support and achievement project references for air cooler equipment.</p></header><div class="capability-body"><aside class="capability-procedure"><figure class="procedure-visual"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/QNSPReISsUWzFvUw.png" data-fallback="assets/air-cooler-procedure-list.png" alt="Air cooled heat exchanger procedure list"><figcaption class="mono-label">Procedure list</figcaption></figure><ol class="deliverable-list"><li><span class="mono-label">01</span><span>Achievement Projects of 3 Air Coolers (Fin-Fan Coolers)</span></li><li><span class="mono-label">02</span><span>Achievement Project of Chemical Recycle Cooler</span></li><li><span class="mono-label">03</span><span>Achievement Project of LDO Air Cooler</span></li></ol></aside><div class="technical-gallery technical-gallery-3"><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/XaiGEaJfiwZXVVgZ.png" data-fallback="assets/air-cooler-three-projects.png" alt="Achievement projects of three air cooled heat exchangers"><figcaption><span class="mono-label">02.01</span><span><strong>Three Air Coolers</strong><small>Fin-Fan Cooler achievement projects</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/CqkUuCGHDGdzeGnz.png" data-fallback="assets/chemical-recycle-cooler.png" alt="Chemical recycle cooler engineering project"><figcaption><span class="mono-label">02.02</span><span><strong>Chemical Recycle Cooler</strong><small>Achievement project</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/pWuMWSEKlyGQfSGN.png" data-fallback="assets/ldo-air-cooler.png" alt="LDO air cooler engineering project"><figcaption><span class="mono-label">02.03</span><span><strong>LDO Air Cooler</strong><small>Achievement project</small></span></figcaption></figure></div></div></article>
+      <article id="shell-tube" class="capability-detail"><header class="capability-heading"><div><span class="section-kicker mono-label">/ 03 — Thermal equipment</span><h2>Shell &amp; Tube Heat Exchangers</h2><p class="capability-subtitle">Models + fabrication details</p></div><p class="section-side-note">Three-dimensional model development and fabrication-detail examples for shell-and-tube equipment.</p></header><div class="capability-body"><aside class="capability-procedure"><figure class="procedure-visual"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/JDKRxBebikJfxZhT.png" data-fallback="assets/shell-tube-procedure-list.png" alt="Shell and tube heat exchanger procedure list"><figcaption class="mono-label">Procedure list</figcaption></figure><ol class="deliverable-list"><li><span class="mono-label">01</span><span>3D Model of Shell &amp; Tube Heat Exchangers as per TEMA Section 1, Figure N-1.2</span></li><li><span class="mono-label">02</span><span>3D Model of Hairpin Type Shell &amp; Tube Heat Exchangers as per API 663</span></li><li><span class="mono-label">03</span><span>Sample 2D Fabrication Detail Drawings</span></li></ol></aside><div class="technical-gallery"><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/IDNJPIzVWkaxFeiI.png" data-fallback="assets/shell-tube-tema-models-01.png" alt="TEMA Section 1 shell and tube heat exchanger 3D model examples"><figcaption><span class="mono-label">03.01</span><span><strong>TEMA 3D Models</strong><small>Section 1, Figure N-1.2 · sheet 01</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/PkHompGaFeuWCHaW.png" data-fallback="assets/shell-tube-tema-models-02.png" alt="TEMA shell and tube 3D model examples"><figcaption><span class="mono-label">03.02</span><span><strong>TEMA 3D Models</strong><small>Section 1, Figure N-1.2 · sheet 02</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/CFPeFGfJmRyloZEG.png" data-fallback="assets/shell-tube-tema-models-03.png" alt="TEMA shell and tube heat exchanger 3D model examples"><figcaption><span class="mono-label">03.03</span><span><strong>TEMA 3D Models</strong><small>Section 1, Figure N-1.2 · sheet 03</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/uyShLJGNpykuoIrO.png" data-fallback="assets/shell-tube-hairpin-api663.png" alt="API 663 hairpin type shell and tube heat exchanger 3D model"><figcaption><span class="mono-label">03.04</span><span><strong>Hairpin Type</strong><small>API 663 3D model</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/KmyqehvmRFPejoHn.png" data-fallback="assets/shell-tube-fabrication-drawings-01.png" alt="Sample shell and tube heat exchanger fabrication drawings"><figcaption><span class="mono-label">03.05</span><span><strong>Fabrication Details</strong><small>Sample 2D drawing · sheet 01</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/yiWwxbwpIqIjRHOz.png" data-fallback="assets/shell-tube-fabrication-drawings-02.png" alt="Sample shell and tube heat exchanger fabrication detail drawings"><figcaption><span class="mono-label">03.06</span><span><strong>Fabrication Details</strong><small>Sample 2D drawing · sheet 02</small></span></figcaption></figure></div></div></article>
+      <article id="pressure-vessels" class="capability-detail"><header class="capability-heading"><div><span class="section-kicker mono-label">/ 04 — Fabricated equipment</span><h2>Pressure Vessel</h2><p class="capability-subtitle">3D model achievement projects</p></div><p class="section-side-note">Three-dimensional modelling references for pressure-vessel and knock-out-drum equipment packages.</p></header><div class="capability-body"><aside class="capability-procedure"><figure class="procedure-visual"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/cOcKoizZbPgQlRdM.png" data-fallback="assets/pressure-vessel-procedure-list.png" alt="Pressure vessel procedure list"><figcaption class="mono-label">Procedure list</figcaption></figure><ol class="deliverable-list"><li><span class="mono-label">01</span><span>KO Drum Pressure Vessel (3D Model)</span></li><li><span class="mono-label">02</span><span>Closed Drain Vessel (3D Model)</span></li><li><span class="mono-label">03</span><span>HP/LP Flare Knock Out Drum Vessel (3D Model)</span></li></ol></aside><div class="technical-gallery technical-gallery-2"><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/aTmRQlebbURLWfaZ.png" data-fallback="assets/pressure-vessel-ko-drum.png" alt="KO Drum pressure vessel 3D model"><figcaption><span class="mono-label">04.01</span><span><strong>KO Drum</strong><small>Pressure Vessel · 3D model</small></span></figcaption></figure><figure class="technical-figure"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/fqXhriofbtZlkUlq.png" data-fallback="assets/pressure-vessel-drain-flare.png" alt="Closed Drain Vessel and HP LP Flare Knock Out Drum Vessel 3D models"><figcaption><span class="mono-label">04.02</span><span><strong>Closed Drain + Flare Knock Out</strong><small>Pressure Vessel · 3D models</small></span></figcaption></figure></div></div></article>
     </section>
-
-    <section class="statement-section" aria-label="Studio statement"><div class="section-index mono-label">/ 00</div><div class="statement-line"></div><p>Good work rarely needs more noise. It needs a clear idea, a useful system, and the confidence to make one thing matter.</p><span class="statement-arrow" aria-hidden="true">↓</span></section>
-
-    <section id="services" class="services-section section-pad">
-      <div class="section-heading-row"><div><span class="section-kicker mono-label">/ 01 — Capabilities</span><h2>Useful clarity, from first thought to final form.</h2></div><p class="section-side-note">For founders, small teams, and people building something worth paying attention to.</p></div>
-      <div class="services-list">
-        <article class="service-row"><span class="service-number mono-label">01</span><h3>Find the signal</h3><p>Positioning, story, and the decisions that make a business easier to understand.</p><span class="service-plus" aria-hidden="true">＋</span></article>
-        <article class="service-row"><span class="service-number mono-label">02</span><h3>Build the system</h3><p>Identity, art direction, and digital foundations that hold up beyond launch day.</p><span class="service-plus" aria-hidden="true">＋</span></article>
-        <article class="service-row"><span class="service-number mono-label">03</span><h3>Move it forward</h3><p>A hands-on partner for the messy middle between a good idea and good work in the world.</p><span class="service-plus" aria-hidden="true">＋</span></article>
-      </div>
-    </section>
-
-    <section id="work" class="work-section section-pad">
-      <div class="section-heading-row work-heading"><div><span class="section-kicker mono-label">/ 02 — Selected work</span><h2>A few things I’ve helped make more legible.</h2></div><span class="work-count mono-label">03 / 03</span></div>
-      <div class="project-list">
-        <article class="project-card project-dark"><div class="project-image-wrap"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A bright creative studio workspace"><span class="project-index mono-label">01</span><span class="project-view">View case study ↗</span></div><div class="project-meta"><div class="project-client-line"><span class="mono-label">Northline Objects</span><span class="mono-label">Brand strategy · Identity</span></div><div class="project-title-row"><h3>A brand system built to travel.</h3><p><span class="outcome-label mono-label">Outcome</span>A clearer shelf presence and a language the whole team could use.</p></div></div></article>
-        <article class="project-card project-light"><div class="project-image-wrap"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A modern studio interior with a long corridor"><span class="project-index mono-label">02</span><span class="project-view">View case study ↗</span></div><div class="project-meta"><div class="project-client-line"><span class="mono-label">Morrow Finance</span><span class="mono-label">Digital product · Direction</span></div><div class="project-title-row"><h3>Making the complex feel navigable.</h3><p><span class="outcome-label mono-label">Outcome</span>A sharper onboarding path for a service people usually avoid.</p></div></div></article>
-        <article class="project-card project-red"><div class="project-image-wrap"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A light-filled creative workspace with desks and chairs"><span class="project-index mono-label">03</span><span class="project-view">View case study ↗</span></div><div class="project-meta"><div class="project-client-line"><span class="mono-label">Fieldwork Studio</span><span class="mono-label">Campaign · Art direction</span></div><div class="project-title-row"><h3>A campaign with a point of view.</h3><p><span class="outcome-label mono-label">Outcome</span>A focused launch system that turned one idea into a full season.</p></div></div></article>
-      </div>
-    </section>
-
-    <section id="about" class="about-section section-pad"><div class="about-index mono-label">/ 03 — About the organization</div><div class="about-grid"><h2>Engineering detail that keeps the whole structure in view.</h2><div class="about-copy"><p>APP Design &amp; Detail Engineering Organization supports practical engineering decisions with disciplined detailing, design coordination, and analysis for industrial equipment and mechanical structures.</p><p>The approach is clear and direct: understand the operating requirement, develop the engineering detail, and communicate the result so fabrication and execution can move forward with confidence.</p><a class="text-link" href="mailto:admin.appmecheng@gmail.com">Ask about your project <span aria-hidden="true">↗</span></a></div></div><div class="about-details"><div class="detail-block"><span class="mono-label">Selected clients</span><p>Heat exchanger systems<br>Fin-Fan Cooler (Air Cooled Heat Exchangers)<br>Pressure vessels<br>Mechanical platforms</p></div><div class="detail-block"><span class="mono-label">Usually involved in</span><p>Detail design<br>Engineering analysis<br>Fabrication coordination</p></div><div class="detail-block detail-availability"><span class="mono-label">Availability</span><p><span class="availability-dot"></span> Open to engineering enquiries</p></div></div></section>
-
-    <section class="contact-section"><div class="contact-topline"><span class="section-kicker mono-label">/ 04 — Contact APP</span><span class="mono-label">Let’s discuss the detail.</span></div><div class="contact-main"><h2>Bring the next project.</h2><p>We’ll engineer the way forward.</p><a class="contact-button" href="mailto:admin.appmecheng@gmail.com">admin.appmecheng@gmail.com <span class="contact-button-icon" aria-hidden="true">↗</span></a><a class="contact-linkedin" href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></section>
-    <footer class="site-footer"><div class="footer-brand"><img src="https://3000-ijuocz2ot84zmzv8ry338-f844b4eb.sg1.manus.computer/manus-storage/app-detail-engineering-logo_51037a73.png" alt="APP Design &amp; Detail Engineering Organization logo" class="footer-mark"><span class="brand-name brand-name-long"><span>APP DESIGN &amp; DETAIL</span><span>ENGINEERING ORGANIZATION</span></span></div><div class="footer-note">Detail design and engineering analysis for industrial equipment and mechanical structures.</div><div class="footer-links"><a href="mailto:admin.appmecheng@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↗</a></div><div class="footer-legal mono-label">© 2026 APP Design &amp; Detail Engineering Organization</div></footer>
+    <section id="about" class="about-section section-pad"><div class="about-index mono-label">/ 07 — About the practice</div><div class="about-grid"><h2>Engineering detail that takes the next decision seriously.</h2><div class="about-copy"><p>APP Design &amp; Detail Engineering Organization supports practical engineering decisions with disciplined detailing, design coordination, and analysis for industrial equipment and mechanical structures.</p><p>The working approach is clear and direct: understand the operating requirement, develop the engineering detail, and communicate the result so fabrication and execution can move forward with confidence.</p><a class="text-link" href="mailto:admin.appmecheng@gmail.com">Ask about your project ↗</a></div></div><div class="about-details"><div class="detail-block"><span class="mono-label">Selected work</span><p>Heat exchanger systems<br>Fin-Fan Coolers<br>Pressure vessels<br>Mechanical platforms</p></div><div class="detail-block"><span class="mono-label">Usually involved in</span><p>Detail design<br>Engineering analysis<br>Fabrication coordination</p></div><div class="detail-block detail-availability"><span class="mono-label">Contact</span><p><span class="availability-dot"></span> Available for engineering enquiries</p></div></div></section>
+    <section class="contact-section"><div class="contact-topline"><span class="section-kicker mono-label">/ 08 — Next move</span><span class="mono-label">Let’s make the next detail clear.</span></div><div class="contact-main"><h2>Bring the requirement.</h2><p>We’ll develop the detail.</p><a class="contact-button" href="mailto:admin.appmecheng@gmail.com">admin.appmecheng@gmail.com <span class="contact-button-icon">↗</span></a><a class="contact-linkedin" href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">in&nbsp; Connect on LinkedIn</a></div></section>
+    <footer class="site-footer"><div class="footer-brand"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663889855937/QwSpMtwKMWzgKdtU.png" data-fallback="assets/app-detail-engineering-logo.png" alt="" class="footer-mark"><span class="brand-name brand-name-long"><span>APP DESIGN &amp; DETAIL</span><span>ENGINEERING ORGANIZATION</span></span></div><div class="footer-note">Detail design and engineering analysis for industrial equipment and mechanical structures.</div><div class="footer-links"><a href="mailto:admin.appmecheng@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/aung-paing-phyo-945199224" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↗</a></div><div class="footer-legal mono-label">© 2026 APP Design &amp; Detail Engineering Organization</div></footer>
   </main>
   <script>
-    // APP interaction philosophy: direct, quick, and tactile; the only stateful control is the mobile rail menu.
-    const menuButton = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.desktop-nav');
-    menuButton.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-      menuButton.querySelector('span').textContent = open ? '×' : '☰';
+    // GitHub Pages safeguard: only use the local bundled fallback if a public image URL ever fails.
+    document.querySelectorAll('img[data-fallback]').forEach(function (image) {
+      image.addEventListener('error', function () {
+        if (!image.dataset.usedFallback) { image.dataset.usedFallback = 'true'; image.src = image.dataset.fallback; }
+      });
     });
-    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Open navigation');
-      menuButton.querySelector('span').textContent = '☰';
-    }));
+    var button = document.querySelector('.menu-toggle');
+    var navigation = document.getElementById('site-nav');
+    if (button && navigation) {
+      button.addEventListener('click', function () {
+        var open = navigation.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+        button.querySelector('span').textContent = open ? '×' : '☰';
+      });
+      navigation.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { navigation.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-label', 'Open navigation'); button.querySelector('span').textContent = '☰'; }); });
+    }
   </script>
 </body>
 </html>
